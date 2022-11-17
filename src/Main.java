@@ -1,21 +1,40 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        boolean isContinue = true;
+        ProductList productList = ProductList.productList();
 
-        /* marka yazdırma
-        for (Brand brands : Brand.brands()){
-            // System.out.println(brands.getName());
-        }*/
-
-
-        Phone p1 = new Phone(1001,"Casper Excalibur",5,5000,5,100,8,"5",4000,"Yellow");
-        System.out.println(p1.getSize());
-
-
-
-
-
-
-
-
+        System.out.println("###PatikaStore'a Hosgeldiniz###");
+        while (isContinue == true) {
+            System.out.println("=========================================");
+            System.out.println("0 - Cikis");
+            System.out.println("1 - Tum Urunler");
+            System.out.println("2 - Urune Gore Filtreleme");
+            System.out.println("3 - Markaya Gore Filtrele");
+            System.out.println("4 - Urun Ekle");
+            System.out.print("Lutfen Seciniz : ");
+            int selected = scan.nextInt();
+            System.out.println("-----------------------------------------");
+            switch (selected) {
+                case 0:
+                    isContinue = false;
+                    System.out.println("Yeniden Bekleriz");
+                    break;
+                case 1:
+                    Print.printAll(productList);
+                    break;
+                case 2:
+                    Print.filterDevice(productList);
+                    break;
+                case 3:
+                    Print.printBrand(productList);
+                    break;
+                case 4:
+                    Add.phone(productList);
+                    break;
+            }
+        }
     }
 }
