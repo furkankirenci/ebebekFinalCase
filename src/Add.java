@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Add {
 
-    public static ProductList addProduct(ProductList productList) {
+    public static PatikaStore addProduct(PatikaStore patikaStore) {
         Scanner scan = new Scanner(System.in);
         System.out.println("1 - Telefon Ekle");
         System.out.println("2 - Notebook Ekle");
@@ -10,16 +10,16 @@ public class Add {
         int selected = scan.nextInt();
         switch (selected) {
             case 1:
-                Add.phone(productList);
+                Add.phone(patikaStore);
                 break;
             case 2:
-                Add.notebook(productList);
+                Add.notebook(patikaStore);
                 break;
         }
-        return productList;
+        return patikaStore;
     }
 
-    public static ProductList phone(ProductList productList) {
+    public static PatikaStore phone(PatikaStore patikaStore) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Urun eklenecektir");
         System.out.print("Urunun adi : ");
@@ -46,12 +46,12 @@ public class Add {
         int battery = scan.nextInt();
         System.out.print("Urunun hafizasi : ");
         int memory = scan.nextInt();
-        Phone[] phones = productList.getAllPhones();
+        Phone[] phones = patikaStore.getAllPhones();
         int n = phones.length;
         Phone p1 = new Phone(1001 + n, name, brandID, price, discount, stock, ram, size, battery, color, memory);
         phones = Add.addPhone(n, phones, p1);
-        productList.setAllPhones(phones);
-        return productList;
+        patikaStore.setAllPhones(phones);
+        return patikaStore;
     }
 
     public static Phone[] addPhone(int n, Phone[] phones, Phone p1) {
@@ -70,7 +70,7 @@ public class Add {
         return newarr;
     }
 
-    public static void notebook(ProductList productList) {
+    public static void notebook(PatikaStore patikaStore) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Urun eklenecektir");
         System.out.print("Urunun adi : ");
@@ -93,11 +93,11 @@ public class Add {
         double size = scan.nextDouble();
         System.out.print("Urunun hafizasi : ");
         int memory = scan.nextInt();
-        Notebook[] notebooks = productList.getAllNotebooks();
+        Notebook[] notebooks = patikaStore.getAllNotebooks();
         int n = notebooks.length;
         Notebook n1 = new Notebook(2001 + n, name, brandID, price, discount, stock, ram, size, memory);
         notebooks = Add.addNotebook(n, notebooks, n1);
-        productList.setAllNotebooks(notebooks);
+        patikaStore.setAllNotebooks(notebooks);
     }
 
     public static Notebook[] addNotebook(int n, Notebook[] notebooks, Notebook n1) {

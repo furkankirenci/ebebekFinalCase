@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         boolean isContinue = true;
-        ProductList productList = ProductList.productList();
+        PatikaStore patikaStore = PatikaStore.productList();
 
 
         System.out.println("###PatikaStore'a Hosgeldiniz###");
@@ -25,19 +25,19 @@ public class Main {
                     System.out.println("Yeniden Bekleriz");
                     break;
                 case 1:
-                    Print.printAll(productList);
+                    Print.printAll(patikaStore);
                     break;
                 case 2:
-                    Print.filterDevice(productList);
+                    Print.filterDevice(patikaStore);
                     break;
                 case 3:
-                    Print.printBrand(productList);
+                    Print.printBrand(patikaStore);
                     break;
                 case 4:
-                    Add.addProduct(productList);
+                    Add.addProduct(patikaStore);
                     break;
                 case 5:
-                    Delete.deleteProduct(productList);
+                    Delete.deleteProduct(patikaStore);
                     break;
                 default:
                     System.out.println("Gecersiz deger girdiniz, tekrar giriniz.");

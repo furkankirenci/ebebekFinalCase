@@ -1,16 +1,16 @@
-public class ProductList {
+public class PatikaStore {
     private Phone[] allPhones;
     private Notebook[] allNotebooks;
 
 
-    public ProductList(Phone[] allPhones, Notebook[] allNotebooks) {
+    public PatikaStore(Phone[] allPhones, Notebook[] allNotebooks) {
         this.allPhones = allPhones;
         this.allNotebooks = allNotebooks;
     }
 
-    public static ProductList productList(){
-        ProductList productList1 = new ProductList(Phone.phones(),Notebook.notebooks());
-        return productList1;
+    public static PatikaStore productList(){
+        PatikaStore patikaStore1 = new PatikaStore(Phone.phones(),Notebook.notebooks());
+        return patikaStore1;
     }
 
 

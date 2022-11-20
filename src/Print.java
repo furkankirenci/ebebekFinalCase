@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class Print {
 
     //Telefonları yazdırma
-    public static void printPhones(ProductList productList) {
+    public static void printPhones(PatikaStore patikaStore) {
         System.out.print("-----Telefonlar-----");
-        Phone[] phones = productList.getAllPhones();
+        Phone[] phones = patikaStore.getAllPhones();
         for (Phone p : phones) {
             if (p.getId() != 0){
                 System.out.printf("%nID: %1$-7d %2$-20s Marka: %3$-9s Ilk Ucret: %6$-6d Indirim: %5$-5d " +
@@ -20,9 +20,9 @@ public class Print {
     }
 
     //Notebookları yazdırma
-    public static void printNotebooks(ProductList productList) {
+    public static void printNotebooks(PatikaStore patikaStore) {
         System.out.print("-----Notebooklar-----");
-        Notebook[] notebooks = productList.getAllNotebooks();
+        Notebook[] notebooks = patikaStore.getAllNotebooks();
         for (Notebook n : notebooks) {
             if (n.getId() != 0)
                 System.out.printf("%nID: %1$-7d %2$-20s Marka: %3$-9s Ilk Ucret: %6$-6d Indirim: %5$-5d " +
@@ -36,13 +36,13 @@ public class Print {
     }
 
     //Tüm ürünleri sıralama
-    public static void printAll(ProductList productList) {
-        printPhones(productList);
-        printNotebooks(productList);
+    public static void printAll(PatikaStore patikaStore) {
+        printPhones(patikaStore);
+        printNotebooks(patikaStore);
     }
 
     //markaları alfabetik sıraya sokma
-    public static void printBrand(ProductList productList) {
+    public static void printBrand(PatikaStore patikaStore) {
         Scanner scanner = new Scanner(System.in);
         int add = 0;
         String[] brandList = new String[Brand.brands().length];
@@ -54,11 +54,11 @@ public class Print {
         for (String brands : brandList) {
             System.out.println(add++ + " - " + brands);
         }
-        Print.showProductsWithBrand(brandList, productList);
+        Print.showProductsWithBrand(brandList, patikaStore);
     }
 
     //Markaya göre ürünleri alfabetik sıralama
-    public static void showProductsWithBrand(String[] brandList, ProductList productList) {
+    public static void showProductsWithBrand(String[] brandList, PatikaStore patikaStore) {
         Scanner scan = new Scanner(System.in);
         int counter = 0;
 
@@ -67,7 +67,7 @@ public class Print {
         System.out.println("Secilen Marka " + brandList[select - 1]);
         String selectedBrands = brandList[select - 1];
         System.out.println("---telefonlar---");
-        Phone[] phones = productList.getAllPhones();
+        Phone[] phones = patikaStore.getAllPhones();
         for (Phone p : phones) {
             if (selectedBrands.equals(p.getBrand().getName())) {
                 System.out.println(p.getName());
@@ -79,7 +79,7 @@ public class Print {
         }
         counter = 0;
         System.out.println("---notebooklar---");
-        Notebook[] notebooks = productList.getAllNotebooks();
+        Notebook[] notebooks = patikaStore.getAllNotebooks();
         for (Notebook n : notebooks) {
             if (selectedBrands.equals(n.getBrand().getName())) {
                 System.out.println(n.getName());
@@ -92,7 +92,7 @@ public class Print {
     }
 
     //Cihaza göre ürün listeleme
-    public static void filterDevice(ProductList productList) {
+    public static void filterDevice(PatikaStore patikaStore) {
         Scanner scan = new Scanner(System.in);
         System.out.println("1 - Telefonlar");
         System.out.println("2 - Notebooklar");
@@ -100,10 +100,10 @@ public class Print {
         int selectedProduct = scan.nextInt();
         switch (selectedProduct) {
             case 1:
-                Print.printPhones(productList);
+                Print.printPhones(patikaStore);
                 break;
             case 2:
-                Print.printNotebooks(productList);
+                Print.printNotebooks(patikaStore);
                 break;
         }
     }
