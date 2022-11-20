@@ -6,6 +6,7 @@ public class Main {
         boolean isContinue = true;
         ProductList productList = ProductList.productList();
 
+
         System.out.println("###PatikaStore'a Hosgeldiniz###");
         while (isContinue == true) {
             System.out.println("=========================================");
@@ -14,6 +15,7 @@ public class Main {
             System.out.println("2 - Urune Gore Filtreleme");
             System.out.println("3 - Markaya Gore Filtrele");
             System.out.println("4 - Urun Ekle");
+            System.out.println("5 - Urun Sil");
             System.out.print("Lutfen Seciniz : ");
             int selected = scan.nextInt();
             System.out.println("-----------------------------------------");
@@ -32,8 +34,13 @@ public class Main {
                     Print.printBrand(productList);
                     break;
                 case 4:
-                    Add.phone(productList);
+                    Add.addProduct(productList);
                     break;
+                case 5:
+                    Delete.deleteProduct(productList);
+                    break;
+                default:
+                    System.out.println("Gecersiz deger girdiniz, tekrar giriniz.");
             }
         }
     }

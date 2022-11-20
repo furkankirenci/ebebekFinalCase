@@ -9,6 +9,7 @@ public abstract class Product {
     private int ram;
     private double size;
     private int memory;
+    private int lastPrice;
 
 
     public Product(int id, String name, int brandID, int price, int discount, int stock, int ram, double size, int memory) {
@@ -22,6 +23,7 @@ public abstract class Product {
         this.ram = ram;
         this.size = size;
         this.memory = memory;
+        this.lastPrice = price - price * discount / 100;
     }
 
     public int getId() {
@@ -102,5 +104,14 @@ public abstract class Product {
 
     public void setMemory(int memory) {
         this.memory = memory;
+    }
+
+
+    public int getLastPrice() {
+        return lastPrice;
+    }
+
+    public void setLastPrice(int lastPrice) {
+        this.lastPrice = lastPrice;
     }
 }

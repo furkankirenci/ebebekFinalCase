@@ -16,23 +16,18 @@ public class ProductList {
 
 
     public Phone[] getAllPhones() {
-        System.out.println("gettere p girdi");
         return allPhones;
     }
 
     public void setAllPhones(Phone[] allPhones) {
-        System.out.println("settere p girdi");
         this.allPhones = allPhones;
     }
 
     public Notebook[] getAllNotebooks() {
-        System.out.println("gettere n girdi");
-
         return allNotebooks;
     }
 
     public void setAllNotebooks(Notebook[] allNotebooks) {
-        System.out.println("settere n girdi");
         this.allNotebooks = allNotebooks;
     }
 }

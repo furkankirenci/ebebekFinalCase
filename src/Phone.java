@@ -11,12 +11,13 @@ public class Phone extends Product {
 
     //add new phone
     public static Phone[] phones() {
-        Phone[] phones = new Phone[5];
-        phones[0] = new Phone(1001, "Xiaomi RedMi Note 6", 8, 5000, 10, 100, 8, 5, 4000, "Yellow", 64);
-        phones[1] = new Phone(1002, "Lenovo A6000", 2, 3000, 10, 100, 8, 5, 4000, "black", 128);
-        phones[2] = new Phone(1003, "Huawei P20", 4, 2000, 15, 100, 3, 5.5, 4000, "red", 64);
-        phones[3] = new Phone(1003, "Huawei P21", 4, 2000, 15, 100, 3, 5.5, 4000, "red", 64);
-        phones[4] = new Phone(1003, "Huawei P22", 4, 2000, 15, 100, 3, 5.5, 4000, "red", 64);
+        Phone[] phones = new Phone[6];
+        phones[0] = new Phone(1001, "Xiaomi RedMi Note 6", 8, 5000, 10, 100, 8, 5, 4000, "mavi", 64);
+        phones[1] = new Phone(1002, "Lenovo A6000", 2, 7000, 10, 100, 8, 5, 4000, "siyah", 128);
+        phones[2] = new Phone(1003, "Huawei P20", 4, 2000, 15, 100, 3, 5.5, 4000, "siyah", 64);
+        phones[3] = new Phone(1004, "Huawei P40", 4, 8000, 15, 100, 3, 5.5, 4000, "mavi", 32);
+        phones[4] = new Phone(1005, "Samsung Galaxy S20", 4, 2000, 15, 100, 3, 5.5, 4000, "kirmizi", 64);
+        phones[5] = new Phone(1002, "Iphone 11", 3, 15000, 10, 100, 12, 7.3, 6000, "mavi", 264);
         return phones;
     }
 
