@@ -69,7 +69,7 @@ public class Print {
         System.out.println("---telefonlar---");
         Phone[] phones = patikaStore.getAllPhones();
         for (Phone p : phones) {
-            if (selectedBrands.equals(p.getBrand().getName())) {
+            if (selectedBrands.equals(p.getBrand().getName()) && p.getId() != 0) {
                 System.out.println(p.getName());
                 counter++;
             }
@@ -81,7 +81,7 @@ public class Print {
         System.out.println("---notebooklar---");
         Notebook[] notebooks = patikaStore.getAllNotebooks();
         for (Notebook n : notebooks) {
-            if (selectedBrands.equals(n.getBrand().getName())) {
+            if (selectedBrands.equals(n.getBrand().getName()) && n.getId() != 0) {
                 System.out.println(n.getName());
                 counter++;
             }
