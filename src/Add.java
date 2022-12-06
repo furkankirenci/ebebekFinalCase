@@ -26,6 +26,7 @@ public class Add {
         String name = scan.nextLine();
         System.out.print("Urunun rengi : ");
         String color = scan.nextLine();
+        Add.printBrands();
         System.out.print("Urun marka kodu : ");
         int brandID = scan.nextInt();
         while (brandID < 1 || brandID > Brand.brands().length){
@@ -75,6 +76,7 @@ public class Add {
         System.out.println("Urun eklenecektir");
         System.out.print("Urunun adi : ");
         String name = scan.nextLine();
+        Add.printBrands();
         System.out.print("Urun marka kodu : ");
         int brandID = scan.nextInt();
         while (brandID < 1 || brandID > Brand.brands().length){
@@ -114,6 +116,14 @@ public class Add {
         System.out.println("===============================");
         System.out.println("--Urun ekleme Basarili--");
         return newarr;
+    }
+
+    public static void printBrands(){
+        System.out.println(" Marka Kodlari : ");
+        for (Brand brands : Brand.brands()) {
+            System.out.print("\t"+ brands.getId() + " | " + brands.getName()+"\t");
+        }
+        System.out.println();
     }
 
 
